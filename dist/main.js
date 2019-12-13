@@ -86,14 +86,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/_deck.js":
+/*!**********************!*\
+  !*** ./src/_deck.js ***!
+  \**********************/
+/*! exports provided: Deck */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Deck\", function() { return Deck; });\nclass Deck {\r\n    constructor (){\r\n\r\n    }\r\n\r\n    sayhi () {\r\n        console.log('hellp my meenITS DECK CLASS')\r\n    }\r\n}\r\n\r\n\n\n//# sourceURL=webpack:///./src/_deck.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("console.log(123)\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _deck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_deck */ \"./src/_deck.js\");\n\r\n\r\nlet deck = new _deck__WEBPACK_IMPORTED_MODULE_0__[\"Deck\"] ();\r\ndeck.sayhi();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
