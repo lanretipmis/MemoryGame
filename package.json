@@ -4,7 +4,8 @@
   "description": "This game will help you develop memory. This project is designed to replenish the portfolio.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "development": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
