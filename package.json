@@ -1,0 +1,19 @@
+{
+  "name": "memorygame",
+  "version": "1.0.0",
+  "description": "This game will help you develop memory. This project is designed to replenish the portfolio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanretipmis/MemoryGame.git"
+  },
+  "author": "Andrew Smodlev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lanretipmis/MemoryGame/issues"
+  },
+  "homepage": "https://github.com/lanretipmis/MemoryGame#readme"
+}
