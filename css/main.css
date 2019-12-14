@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;  
+    font-size: 62.5%; 
+}
+html{
+    box-sizing:border-box;
+    height: 100%;
+
+    /* HERE THERE FONTS YA  */
+    font-family: 'Bungee Shade', cursive;
+    text-align: center;
+}
+
+body{
+    background: linear-gradient(to left bottom, #519076, #47876c, #3e7d62, #347459, #2a6b4f);
+    background-size: cover;
+} 
+
+.wrapper{
+    margin: 0 auto;
+}
+
+.wrapper__main-header{
+    font-size: 5rem; 
+    animation: headerSize 7s ease-in-out;
+}
+
+.main-container{
+    display: none;
+    font-size: 3rem;
+    border: 1px solid black;
+    border-radius: .5rem;
+    background:#905450;
+    max-width: 60rem;
+    margin: 0 auto;
+
+    animation: onset 1s ease-out; /*8? */
+}
+
+.playground{
+
+}
+
+.btn-start{
+    border: 1px solid black;    
+    /* border-radius: .5rem; */
+    box-shadow: none;
+    padding: .1rem .2rem;
+    background: #388289;
+
+    font-family: 'Bungee Shade', cursive;
+}
+
+
+
+
+
+
+    /* ANIMATIONS ARE HERE  */
+
+@keyframes headerSize{
+    0%{
+        font-size: 7.3rem; 
+    }
+
+    100%{
+        font-size: 5rem;
+    }
+}
+
+@keyframes onset {
+    0%{
+        font-size: 0;
+    }
+
+    80%{
+        font-size: 2rem;
+    }
+
+    100%{
+        font-size: 3rem;
+    }
+}
