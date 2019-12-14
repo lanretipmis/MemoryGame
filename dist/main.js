@@ -90,11 +90,11 @@
 /*!**********************!*\
   !*** ./src/_deck.js ***!
   \**********************/
-/*! exports provided: Deck */
+/*! exports provided: Deck, deck */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Deck\", function() { return Deck; });\nclass Deck {\r\n    constructor (){\r\n\r\n    }\r\n\r\n    sayhi () {\r\n        console.log('hellp my meenITS DECK CLASS')\r\n    }\r\n}\r\n\r\n\n\n//# sourceURL=webpack:///./src/_deck.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Deck\", function() { return Deck; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"deck\", function() { return deck; });\nclass Deck {\r\n    constructor (){\r\n\r\n    }\r\n}\r\n\r\nlet deck = new Deck ();\r\n\n\n//# sourceURL=webpack:///./src/_deck.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _deck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_deck */ \"./src/_deck.js\");\n\r\n\r\nlet deck = new _deck__WEBPACK_IMPORTED_MODULE_0__[\"Deck\"] ();\r\ndeck.sayhi();\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _deck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_deck */ \"./src/_deck.js\");\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
