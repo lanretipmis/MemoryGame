@@ -34,27 +34,28 @@ body{
     border-radius: .5rem;
     background:#905450;
     max-width: 60rem;
-    margin: 0 auto;
+    min-height: 60rem;
+    margin: 1rem auto;
 
-    animation: onset 1s ease-out; /*8? */
+    animation: onset 8s ease-out; 
 }
 
 .playground{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.deck{
 
 }
 
-.btn-start{
-    border: 1px solid black;    
-    /* border-radius: .5rem; */
-    box-shadow: none;
-    padding: .1rem .2rem;
-    background: #388289;
-
-    font-family: 'Bungee Shade', cursive;
+.card{
+    display: block;
+    font-size: 3rem;
+    margin: 1rem;
+    background:red;
 }
-
-
-
 
 
 
@@ -67,19 +68,5 @@ body{
 
     100%{
         font-size: 5rem;
-    }
-}
-
-@keyframes onset {
-    0%{
-        font-size: 0;
-    }
-
-    80%{
-        font-size: 2rem;
-    }
-
-    100%{
-        font-size: 3rem;
     }
 }
