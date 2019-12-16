@@ -34,27 +34,27 @@ body{
     border-radius: .5rem;
     background:#905450;
     max-width: 60rem;
-    min-height: 60rem;
+    padding: 1.2rem 1rem;
     margin: 1rem auto;
 
     animation: onset 8s ease-out; 
 }
 
 .playground{
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
+   
 }
 
 .deck{
-
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .card{
     display: block;
     font-size: 3rem;
     margin: 1rem;
-    background:red;
+    background:black;
 }
 
 
