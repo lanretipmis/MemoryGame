@@ -21,11 +21,17 @@ class Deck {
     }
 
     shuffle (){
-        let shuffled = this.cardDeck.sort(()=>{
-            return Math.random() - 0.5;
-        })
-        console.log(shuffled);
+     let j, temp;
+     let arr = this.cardDeck;
+     for (let i=arr.length-1; i>0, i--;){
+        j = Math.floor(Math.random()*(i+1));
+        temp = arr[j];
+        arr[j]= arr[i];
+        arr[i] = temp;
+     }
+     return arr; 
     }
 }
 
 export let deck = new Deck ();
+
