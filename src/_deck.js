@@ -1,4 +1,4 @@
-class Deck {
+ export class Deck {
     constructor (){
         this.cardDeck = [
             {icon : '<i class="fas fa-frog"></i>', faceUp : false, matched: false},
@@ -31,7 +31,14 @@ class Deck {
      }
      return arr; 
     }
+
+    isIconMatched (cardDeck, firstCardIndex, secondCardIndex){
+        if (cardDeck[firstCardIndex].icon === cardDeck[secondCardIndex].icon){
+            return true;
+        }   else {
+            return false;
+        }
+    }
 }
 
-export let deck = new Deck ();
 
