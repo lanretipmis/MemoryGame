@@ -8,6 +8,6 @@
     }
 
     buildDeck (gameDeck){
-        const declElement = document.querySelector('.deck')
+        const deckElement = document.querySelector('.deck')
     }
 }

@@ -1,4 +1,4 @@
- export class Deck {
+ export default class Deck {
     constructor (){
         this.cardDeck = [
             {icon : '<i class="fas fa-frog"></i>', faceUp : false, matched: false},
@@ -21,13 +21,10 @@
     }
 
     shuffle (){
-     let j, temp;
      let arr = this.cardDeck;
      for (let i=arr.length-1; i>0, i--;){
-        j = Math.floor(Math.random()*(i+1));
-        temp = arr[j];
-        arr[j]= arr[i];
-        arr[i] = temp;
+        let j = Math.floor(Math.random()*(i+1));
+        [arr[i], arr[j]] = [arr[j], arr[i]]
      }
      return arr; 
     }

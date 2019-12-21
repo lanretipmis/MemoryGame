@@ -86,15 +86,39 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/_UI.js":
+/*!********************!*\
+  !*** ./src/_UI.js ***!
+  \********************/
+/*! exports provided: UI */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"UI\", function() { return UI; });\n class UI{\r\n    constructor (){\r\n        this.gameTimer = null;\r\n        this.gameTimerMin = 0;\r\n        this.gameTimerSec = 0;\r\n        this.secondsDom = 0;//DOM seconds mske\r\n        this.minutesDom = 0;//DOM min mske \r\n    }\r\n\r\n    buildDeck (gameDeck){\r\n        const deckElement = document.querySelector('.deck')\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/_UI.js?");
+
+/***/ }),
+
 /***/ "./src/_deck.js":
 /*!**********************!*\
   !*** ./src/_deck.js ***!
   \**********************/
-/*! exports provided: Deck, deck */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Deck\", function() { return Deck; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"deck\", function() { return deck; });\nclass Deck {\r\n    constructor (){\r\n\r\n    }\r\n}\r\n\r\nlet deck = new Deck ();\r\n\n\n//# sourceURL=webpack:///./src/_deck.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Deck; });\n class Deck {\r\n    constructor (){\r\n        this.cardDeck = [\r\n            {icon : '<i class=\"fas fa-frog\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-frog\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-atom\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-atom\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-bath\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-bath\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-bowling-ball\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-bowling-ball\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-brain\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-brain\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fab fa-forumbee\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fab fa-forumbee\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-gem\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-gem\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-guitar\"></i>', faceUp : false, matched: false},\r\n            {icon : '<i class=\"fas fa-guitar\"></i>', faceUp : false, matched: false},\r\n        ]\r\n    }\r\n\r\n    shuffle (){\r\n     let arr = this.cardDeck;\r\n     for (let i=arr.length-1; i>0, i--;){\r\n        let j = Math.floor(Math.random()*(i+1));\r\n        [arr[i], arr[j]] = [arr[j], arr[i]]\r\n     }\r\n     return arr; \r\n    }\r\n\r\n    isIconMatched (cardDeck, firstCardIndex, secondCardIndex){\r\n        if (cardDeck[firstCardIndex].icon === cardDeck[secondCardIndex].icon){\r\n            return true;\r\n        }   else {\r\n            return false;\r\n        }\r\n    }\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/_deck.js?");
+
+/***/ }),
+
+/***/ "./src/_gamePlay.js":
+/*!**************************!*\
+  !*** ./src/_gamePlay.js ***!
+  \**************************/
+/*! exports provided: GamePlay */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GamePlay\", function() { return GamePlay; });\nclass GamePlay{\r\n    constructor (){\r\n        this.deck = null; \r\n        this.gameDeck = [];\r\n        this.gameUI = null; \r\n        this.moveCount = 0;\r\n        this.flipCount = 0;\r\n        this.matchCount = 0; \r\n        this.firstCard = undefined;\r\n        this.deckFragment = null;\r\n        this.isTurnInProgress = false; \r\n    }\r\n\r\n    setDeck(deck){\r\n        this.deck = deck;\r\n    }\r\n\r\n    setUI (ui){\r\n        this.gameUI = ui;\r\n    }\r\n\r\n}\n\n//# sourceURL=webpack:///./src/_gamePlay.js?");
 
 /***/ }),
 
@@ -106,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _deck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_deck */ \"./src/_deck.js\");\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _deck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_deck */ \"./src/_deck.js\");\n/* harmony import */ var _UI__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_UI */ \"./src/_UI.js\");\n/* harmony import */ var _gamePlay__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_gamePlay */ \"./src/_gamePlay.js\");\n\r\n\r\n\r\n\r\nconst deck = new _deck__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\r\nconst gameUI = new _UI__WEBPACK_IMPORTED_MODULE_1__[\"UI\"]();\r\nconst gamePlay = new _gamePlay__WEBPACK_IMPORTED_MODULE_2__[\"GamePlay\"]();\r\n\r\nconsole.log(deck.shuffle());\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

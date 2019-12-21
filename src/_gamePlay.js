@@ -7,7 +7,7 @@ export class GamePlay{
         this.flipCount = 0;
         this.matchCount = 0; 
         this.firstCard = undefined;
-        this,deckFragment = null;
+        this.deckFragment = null;
         this.isTurnInProgress = false; 
     }
 
@@ -19,7 +19,4 @@ export class GamePlay{
         this.gameUI = ui;
     }
 
-    getGameDeck(){
-        return game
-    }
 }
