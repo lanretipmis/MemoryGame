@@ -7,7 +7,15 @@
         this.minutesDom = 0;//DOM min mske 
     }
 
-    buildDeck (gameDeck){
-        const deckElement = document.querySelector('.deck')
+    showDeck (gameDeck){
+     let output = ``;
+     gameDeck.forEach((el, index) => {
+         output += `<li class="card" id='${index}'>${el.icon}</i></li>`;
+     });
+     document.querySelector('.deck').innerHTML = output;
+    }
+
+    turnFaceDown (cardID){
+
     }
 }

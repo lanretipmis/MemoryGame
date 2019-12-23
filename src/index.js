@@ -7,5 +7,12 @@ const gameUI = new UI();
 const gamePlay = new GamePlay();
 
 gamePlay.setDeck(deck.shuffle());
-gamePlay.showDeck();
+gamePlay.setUI(gameUI);
+gamePlay.startGame();
+
+
+// document.querySelector('.deck').addEventListener('click', function(e){
+//     e.preventDefault();
+//     gamePlay.turn(e.target.parentNode.getAttribute('id'))
+// })
 
