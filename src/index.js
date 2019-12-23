@@ -6,5 +6,6 @@ const deck = new Deck();
 const gameUI = new UI();
 const gamePlay = new GamePlay();
 
-console.log(deck.shuffle());
+gamePlay.setDeck(deck.shuffle());
+gamePlay.showDeck();
 

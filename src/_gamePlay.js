@@ -19,4 +19,16 @@ export class GamePlay{
         this.gameUI = ui;
     }
 
+    showDeck (){
+        let output = ``;
+        for (let i of this.deck){
+            output += ` <li class="card" id='1'>${i.icon}</i></li>`
+        }
+
+        document.querySelector('.deck').innerHTML = output;
+    }
+
+
+    
+
 }
