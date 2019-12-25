@@ -21,7 +21,11 @@ export class GamePlay{
 
     startGame (){
         this.gameUI.showDeck(this.deck);
-        
+        const arrOfLi = document.querySelectorAll('li');
+        arrOfLi.forEach(item=>{item.addEventListener('click', this.gameUI.faceUp)});
+
+        //теперь надо добавить функцию оюраюотки, что если в массие есть две поднятый карточки и они совпадают и сделать
+        //это все через цепочтку. То есть сл функция будет в FaceUp/
     }
 
 
