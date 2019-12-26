@@ -11,8 +11,10 @@ gamePlay.setUI(gameUI);
 gamePlay.startGame();
 
 
-// document.querySelector('.deck').addEventListener('click', function(e){
-//     e.preventDefault();
-//     gamePlay.turn(e.target.parentNode.getAttribute('id'))
-// })
+document.querySelector('.deck').addEventListener('click', function(e){
+    e.preventDefault();
+    gamePlay.turn(e.target.getAttribute('id'));
+})
+
+console.log(gamePlay.deck)
 

@@ -21,14 +21,36 @@ export class GamePlay{
 
     startGame (){
         this.gameUI.showDeck(this.deck);
-        const arrOfLi = document.querySelectorAll('li');
-        arrOfLi.forEach(item=>{item.addEventListener('click', this.gameUI.faceUp)});
-
-        //теперь надо добавить функцию обработки, что если в массие есть две поднятый карточки и они совпадают и сделать
-        //это все через цепочтку. То есть сл функция будет в FaceUp/
+        
     }
 
+    turn (id){
+        if (id === null){
+            return false;
+        } else {
+            this.gameUI.faceUp(id);
+            this.deck[id].faceUp = true;
+            this.firstCard = id;
+            this.moveCount++;
+            this.flipCount++;
+            
+            if (this.flipCount === 2){
+                this.checkForMatch();
+            }
+        }
+    }
 
-    
+    checkForMatch(){
+        let faceUpArr = this.deck.filter(item=>{return item.faceUp==true});
+        console.log(faceUpArr);
+        if (faceUpArr[0].icon === faceUpArr[1].icon){
+            this.matchCount++;
+        }  else{
+            this.flipCount = 0;
+            this.deck[this.firstCard].faceUp = false;
+            // this.gameUI.faceDown(this.deck[this.firstCard]);
+            // console.log(this.deck[this.deck.indexOf(item.faceUp==true)]); //короче надо как то найти вторую карточку с первой врде поучилось, но она пока то же не становится невидимой
+        }
+    }
 
 }

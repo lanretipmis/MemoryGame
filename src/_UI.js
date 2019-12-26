@@ -15,13 +15,12 @@
      document.querySelector('.deck').innerHTML = output;
     }
 
-    faceUp (e){
-        e.preventDefault();
-        if (e.target.classList == 'card hide-card') {
-            this.classList = 'card';
-            //надо как то накрыть элемент, потому что при нажатии в центр квадрата(то есть на саму иконку) квадрат не изчезает.
-        }
+    faceUp (id){
+        document.getElementById(`${id}`).lastChild.style.visibility = 'visible';
+        document.getElementById(`${id}`).classList = 'card show-card';
+    }
 
-       console.log(e.target)
+    faceDown(id){
+        document.getElementById(`${id}`).classList = 'card hide-card';
     }
 }

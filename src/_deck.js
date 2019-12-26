@@ -1,22 +1,22 @@
  export default class Deck {
     constructor (){
         this.cardDeck = [
-            {icon : '<i class="fas fa-frog"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-frog"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-atom"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-atom"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-bath"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-bath"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-bowling-ball"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-bowling-ball"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-brain"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-brain"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fab fa-forumbee"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fab fa-forumbee"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-gem"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-gem"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-guitar"></i>', faceUp : false, matched: false},
-            {icon : '<i class="fas fa-guitar"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-frog fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-frog fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-atom fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-atom fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-bath fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-bath fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-bowling-ball fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-bowling-ball fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-brain fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-brain fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fab fa-forumbee fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fab fa-forumbee fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-gem fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-gem fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-guitar fa-lg"></i>', faceUp : false, matched: false},
+            {icon : '<i class="fas fa-guitar fa-lg"></i>', faceUp : false, matched: false},
         ]
     }
 
