@@ -28,11 +28,14 @@ export class GamePlay{
         if (id === null){
             return false;
         } else {
-            this.gameUI.faceUp(id);
             this.deck[id].faceUp = true;
             this.firstCard = id;
             this.moveCount++;
             this.flipCount++;
+            if (this.flipCount > 2){
+                return false;
+            }
+            this.gameUI.faceUp(id);
             
             if (this.flipCount === 2){
                 this.checkForMatch();
@@ -41,15 +44,25 @@ export class GamePlay{
     }
 
     checkForMatch(){
-        let faceUpArr = this.deck.filter(item=>{return item.faceUp==true});
+        let faceUpArr = this.deck.filter((item, index)=>{return item.faceUp==true});
         console.log(faceUpArr);
-        if (faceUpArr[0].icon === faceUpArr[1].icon){
+        if (faceUpArr[0].icon == faceUpArr[1].icon){
             this.matchCount++;
+            this.flipCount = 0;
+            faceUpArr = [];
         }  else{
             this.flipCount = 0;
             this.deck[this.firstCard].faceUp = false;
-            // this.gameUI.faceDown(this.deck[this.firstCard]);
-            // console.log(this.deck[this.deck.indexOf(item.faceUp==true)]); //короче надо как то найти вторую карточку с первой врде поучилось, но она пока то же не становится невидимой
+            let secCard = this.deck.find(item=>{return item.faceUp==true});
+            secCard.faceUp = false;
+            setTimeout(()=>{
+                this.gameUI.faceDown(this.firstCard);
+                this.gameUI.faceDown(this.deck.indexOf(secCard)); 
+                console.log(this.firstCard)
+                console.log(secCard)
+            },1600) 
+            faceUpArr = [];
+
         }
     }
 

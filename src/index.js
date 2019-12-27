@@ -16,5 +16,5 @@ document.querySelector('.deck').addEventListener('click', function(e){
     gamePlay.turn(e.target.getAttribute('id'));
 })
 
-console.log(gamePlay.deck)
+
 
