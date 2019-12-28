@@ -34,34 +34,35 @@ export class GamePlay{
             this.flipCount++;
             if (this.flipCount > 2){
                 return false;
-            }
-            this.gameUI.faceUp(id);
-            
-            if (this.flipCount === 2){
+            } else if (this.flipCount < 2){
+                this.gameUI.faceUp(id);
+            } else if (this.flipCount === 2){
+                this.gameUI.faceUp(id);
+                console.log(this.firstCard);
                 this.checkForMatch();
             }
         }
     }
 
     checkForMatch(){
-        let faceUpArr = this.deck.filter((item, index)=>{return item.faceUp==true});
-        console.log(faceUpArr);
-        if (faceUpArr[0].icon == faceUpArr[1].icon){
+        this.deckFragment = this.deck.filter((item, index)=>{return item.faceUp===true});
+        console.log(this.deckFragment); //-------------------------
+        if (this.deckFragment[0].icon == this.deckFragment[1].icon){
             this.matchCount++;
             this.flipCount = 0;
-            faceUpArr = [];
+            this.deckFragment= [];
         }  else{
             this.flipCount = 0;
             this.deck[this.firstCard].faceUp = false;
-            let secCard = this.deck.find(item=>{return item.faceUp==true});
-            secCard.faceUp = false;
+            let secCard = this.deck.indexOf(item=>{return item.faceUp==true});
+            this.deck[secCard].faceUp = false;
             setTimeout(()=>{
                 this.gameUI.faceDown(this.firstCard);
-                this.gameUI.faceDown(this.deck.indexOf(secCard)); 
+                this.gameUI.faceDown(this.deck[secCard]); 
                 console.log(this.firstCard)
                 console.log(secCard)
-            },1600) 
-            faceUpArr = [];
+            },1000) 
+            this.deckFragment=[];
 
         }
     }
