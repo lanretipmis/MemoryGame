@@ -1,3 +1,4 @@
+'use strict'
 import Deck from './_deck';
 import {UI} from './_UI';
 import {GamePlay} from './_gamePlay';

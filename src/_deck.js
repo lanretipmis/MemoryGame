@@ -1,4 +1,4 @@
- export default class Deck {
+export default class Deck {
     constructor (){
         this.cardDeck = [
             {icon : '<i class="fas fa-frog fa-lg"></i>', faceUp : false, matched: false},

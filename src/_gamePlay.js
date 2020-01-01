@@ -32,13 +32,13 @@ export class GamePlay{
             this.firstCard = id;
             this.moveCount++;
             this.flipCount++;
+            console.log(this.deck)
             if (this.flipCount > 2){
                 return false;
             } else if (this.flipCount < 2){
                 this.gameUI.faceUp(id);
             } else if (this.flipCount === 2){
                 this.gameUI.faceUp(id);
-                console.log(this.firstCard);
                 this.checkForMatch();
             }
         }
@@ -46,7 +46,6 @@ export class GamePlay{
 
     checkForMatch(){
         this.deckFragment = this.deck.filter((item, index)=>{return item.faceUp===true});
-        console.log(this.deckFragment); //-------------------------
         if (this.deckFragment[0].icon == this.deckFragment[1].icon){
             this.matchCount++;
             this.flipCount = 0;
@@ -54,16 +53,13 @@ export class GamePlay{
         }  else{
             this.flipCount = 0;
             this.deck[this.firstCard].faceUp = false;
-            let secCard = this.deck.indexOf(item=>{return item.faceUp==true});
+            let secCard = this.deck.findIndex(item=>{return item.faceUp==true});
             this.deck[secCard].faceUp = false;
             setTimeout(()=>{
                 this.gameUI.faceDown(this.firstCard);
-                this.gameUI.faceDown(this.deck[secCard]); 
-                console.log(this.firstCard)
-                console.log(secCard)
+                this.gameUI.faceDown(secCard); 
             },1000) 
             this.deckFragment=[];
-
         }
     }
 
