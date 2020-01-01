@@ -24,4 +24,5 @@
         document.getElementById(`${id}`).classList = 'card hide-card hide-animation';
         document.getElementById(`${id}`).lastChild.style.visibility = 'hidden';
     }
+
 }

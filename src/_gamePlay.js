@@ -7,6 +7,7 @@ export class GamePlay{
         this.flipCount = 0;
         this.matchCount = 0; 
         this.firstCard = undefined;
+        this.secCard = undefined;
         this.deckFragment = null;
         this.isTurnInProgress = false; 
     }
@@ -37,6 +38,7 @@ export class GamePlay{
                 return false;
             } else if (this.flipCount < 2){
                 this.gameUI.faceUp(id);
+                this.secCard = id;
             } else if (this.flipCount === 2){
                 this.gameUI.faceUp(id);
                 this.checkForMatch();
@@ -45,21 +47,21 @@ export class GamePlay{
     }
 
     checkForMatch(){
-        this.deckFragment = this.deck.filter((item, index)=>{return item.faceUp===true});
-        if (this.deckFragment[0].icon == this.deckFragment[1].icon){
+        if (this.deck[this.firstCard].icon == this.deck[this.secCard].icon && this.deck[this.firstCard].matched == this.deck[this.secCard].matched){
             this.matchCount++;
             this.flipCount = 0;
-            this.deckFragment= [];
+            this.deck[this.firstCard].matched = true;
+            this.deck[this.firstCard].matched = true;
         }  else{
             this.flipCount = 0;
             this.deck[this.firstCard].faceUp = false;
-            let secCard = this.deck.findIndex(item=>{return item.faceUp==true});
-            this.deck[secCard].faceUp = false;
+            this.deck[this.secCard].faceUp = false;
             setTimeout(()=>{
                 this.gameUI.faceDown(this.firstCard);
-                this.gameUI.faceDown(secCard); 
-            },1000) 
-            this.deckFragment=[];
+                this.gameUI.faceDown(this.secCard); 
+            },400) 
+            
+            
         }
     }
 
