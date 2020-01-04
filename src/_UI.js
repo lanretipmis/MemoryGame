@@ -25,4 +25,23 @@
         document.getElementById(`${id}`).lastChild.style.visibility = 'hidden';
     }
 
+    isCardMatched(cardIndex) {
+        return document.getElementById(`${cardIndex}`)
+          .getAttribute('class')
+          .includes('match');
+      }
+
+    updateMoveCount(moveCount) {
+        const countElement = document.querySelector('.moves');
+        countElement.innerText = `Moves Counter: ${moveCount}`;
+    }
+
+    markMatched(firstCard, secCard){
+        document.getElementById(`${firstCard}`).classList += ' match';
+        document.getElementById(`${secCard}`).classList += ' match';
+    }
+
+    gameOverScreen(){
+        document.getElementById('.main-container').classList += 'gameover' 
+    }
 }

@@ -10,6 +10,7 @@ export class GamePlay{
         this.secCard = undefined;
         this.deckFragment = null;
         this.isTurnInProgress = false; 
+        this.wait = ms => new Promise((r, j) => setTimeout(r, ms));
     }
 
     setDeck(deck){
@@ -21,48 +22,73 @@ export class GamePlay{
     }
 
     startGame (){
-        this.gameUI.showDeck(this.deck);
-        
+        this.moveCount = 0;
+        this.flipCount = 0;
+        this.matchCount = 0;
+        this.firstCard = undefined;
+        this.gameDeck = this.deck;
+        this.gameUI.showDeck(this.gameDeck);
+        this.gameUI.updateMoveCount(this.moveCount);
     }
 
-    turn (id){
-        if (id === null){
+    isIconMatched (cardDeck, firstCardIndex, secondCardIndex){
+        if (cardDeck[firstCardIndex].icon === cardDeck[secondCardIndex].icon){
+            return true;
+        }   else {
             return false;
+        }
+    }
+
+    turn (selectedCard){
+        if (selectedCard == null){
+            return false
+        } 
+        if (this.firstCard == selectedCard){
+            return false;
+        }
+        if (this.gameUI.isCardMatched(selectedCard)){
+            return false;
+        }
+        if (this.flipCount > 1){
+            return false;
+        }
+
+        this.gameUI.faceUp(selectedCard);
+        this.flipCount += 1;
+        if (this.flipCount === 1){
+            this.firstCard = selectedCard;
         } else {
-            this.deck[id].faceUp = true;
-            this.firstCard = id;
-            this.moveCount++;
-            this.flipCount++;
-            console.log(this.deck)
-            if (this.flipCount > 2){
-                return false;
-            } else if (this.flipCount < 2){
-                this.gameUI.faceUp(id);
-                this.secCard = id;
-            } else if (this.flipCount === 2){
-                this.gameUI.faceUp(id);
-                this.checkForMatch();
+            this.moveCount += 1;
+            this.gameUI.updateMoveCount(this.moveCount);
+            if (!this.isIconMatched(this.gameDeck, this.firstCard, selectedCard)){
+                this.pairNotMatched(this.firstCard, selectedCard)
+            } else {
+                this.pairMatched(this.firstCard, selectedCard)
             }
         }
+
+        if (this.matchCount >= 8){
+            this.gameUI.gameOverScreen();
+            this.gameUI.stopTimer();
+            return true;
+        } 
+
+        return false;
     }
 
-    checkForMatch(){
-        if (this.deck[this.firstCard].icon == this.deck[this.secCard].icon && this.deck[this.firstCard].matched == this.deck[this.secCard].matched){
-            this.matchCount++;
-            this.flipCount = 0;
-            this.deck[this.firstCard].matched = true;
-            this.deck[this.firstCard].matched = true;
-        }  else{
-            this.flipCount = 0;
-            this.deck[this.firstCard].faceUp = false;
-            this.deck[this.secCard].faceUp = false;
-            setTimeout(()=>{
-                this.gameUI.faceDown(this.firstCard);
-                this.gameUI.faceDown(this.secCard); 
-            },400) 
-            
-            
-        }
+    pairMatched(firstCard, secCard){
+        this.gameUI.markMatched(this.firstCard, secCard);
+        this.matchCount += 1;
+        this.firstCard = undefined;
+        this.flipCount = 0;
+    }
+
+    async pairNotMatched(firstCard, secCard){
+        await  this.wait(1000);
+        this.gameUI.faceDown(firstCard);
+        this.gameUI.faceDown(secCard);
+        this.firstCard = undefined;
+        this.flipCount = 0;
     }
 
 }

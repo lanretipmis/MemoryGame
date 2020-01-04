@@ -17,5 +17,11 @@ document.querySelector('.deck').addEventListener('click', function(e){
     gamePlay.turn(e.target.getAttribute('id'));
 })
 
+document.querySelector('.restart').addEventListener('click', function(e){
+    e.preventDefault()
+    gamePlay.setDeck(deck.shuffle());
+    gamePlay.setUI(gameUI);
+    gamePlay.startGame();
+})
 
 

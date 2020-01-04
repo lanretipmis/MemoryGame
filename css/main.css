@@ -16,6 +16,7 @@ html{
 body{
     background: #EA9171;
     background-size: cover;
+    
 } 
 
 .wrapper{
@@ -64,6 +65,11 @@ body{
  
 }
 
+.counters .fas{
+    visibility: visible;
+    
+}
+
 .hide-card{
     background: #5F8463;
     border-radius:.4rem;
@@ -79,6 +85,15 @@ body{
     animation: hideIcon 750ms linear both;   
 }
 
+.counters{
+    font-size: 2.6rem;
+    font-family: 'Roboto Mono', monospace;
+    display: inline-block;
+}
+
+.gameover{
+    
+}
     /* ANIMATIONS ARE HERE  */
 
 @keyframes headerSize{
